@@ -1,0 +1,149 @@
+# GOLDEN OUTPUT (first-cut)
+Notes:
+- Numeric results shown for deterministic cases that don't depend on assembler PC placement.
+- AUIPC/JAL/JALR values are PC-relative; exact numbers depend on final instruction addresses
+  after pseudo-instruction expansion. They are marked as RELATIVE below.
+- Memory is little-endian.
+
+## U-TYPE: LUI (5 tests)
+x5 = 0x12345000
+x6 = 0x00000000
+x7 = 0xFFFFF000
+x8 = 0x00001000
+x9 = 0xABCDE000
+
+## U-TYPE: AUIPC (5 tests)
+x10 (T1) = PC_T1 + 0x00000000  (RELATIVE)
+x10 (T2) = PC_T2 + 0x00001000  (RELATIVE)
+x11 (T3) = PC_T3 + 0x007FF000  (RELATIVE)
+x12 (T4) = PC_T4 + 0x00FFF000  (RELATIVE)
+x13 (T5) = PC_T5 + 0x00000000  (RELATIVE)
+
+## I-TYPE: ADDI (5 tests)
+x14 = 0x00000001
+x15 = 0xFFFFFFFF
+x16 = 0xFFFFFFF0
+x17 = 0x000007FF
+x18 = 0xFFFFF800
+
+## I-TYPE: ANDI (5 tests)
+x19 T1 = 0x00000000
+x19 T2 = 0x0000000F
+x19 T3 = 0xFFFF000F
+x19 T4 = 0x0000000F
+x19 T5 = 0x00000000
+
+## I-TYPE: ORI (5 tests)
+x23 T1 = 0x00F0F000
+x23 T2 = 0x00F0F00F
+x23 T3 = 0xFFFFFFFF
+x23 T4 = 0x00000123
+x23 T5 = 0x00F0F700
+
+## I-TYPE: XORI (5 tests)
+x24 T1 = 0xAAAA5555
+x24 T2 = 0x5555AAAA
+x24 T3 = 0xAAAA52AA
+x24 T4 = 0xAAAA5D55
+x24 T5 = 0xAAAA5AAA
+
+## I-TYPE: SLTI (5 tests)
+x26 T1 = 0x00000001
+x26 T2 = 0x00000000
+x26 T3 = 0x00000001
+x26 T4 = 0x00000000
+x26 T5 = 0x00000000
+
+## I-TYPE: SLLI (5 tests)
+x29 T1 = 0x00000001
+x29 T2 = 0x00000002
+x29 T3 = 0x80000000
+x29 T4 = 0x00008000
+x29 T5 = 0x00000020
+
+## R-TYPE: ADD (5 tests)
+x5 T1 = 0x00000000
+x5 T2 = 0x00000003
+x5 T3 = 0xFFFFFFFE
+x5 T4 = 0xFFFFFFFE
+x5 T5 = 0xFFFFFFFB
+
+## R-TYPE: SUB (5 tests)
+x8 T1 = 0x00000000
+x8 T2 = 0x00000001
+x8 T3 = 0xFFFFFFFF
+x8 T4 = 0xFFFFFFFE
+x8 T5 = 0x7FFFFFFF
+
+## R-TYPE: AND (5 tests)
+x13 T1 = 0x00FF0000
+x13 T2 = 0xFFFF0000
+x13 T3 = 0x00FF00FF
+x13 T4 = 0x00000000
+x13 T5 = 0x00000000
+
+## R-TYPE: OR (5 tests)
+x14 T1 = 0xFFFF00FF
+x14 T2 = 0xFFFF0000
+x14 T3 = 0x00FF00FF
+x14 T4 = 0x00000000
+x14 T5 = 0xFFFF0000
+
+## R-TYPE: XOR (5 tests)
+x15 T1 = 0xFFFFFFFF
+x15 T2 = 0x00000000
+x15 T3 = 0x00000000
+x15 T4 = 0xAAAA5555
+x15 T5 = 0x00000000
+
+## R-TYPE: SLL (5 tests)
+x16 T1 = 0x00000001
+x16 T2 = 0x00000002
+x16 T3 = 0x80000000
+x16 T4 = 0x00000001
+x16 T5 = 0x80000000
+
+## R-TYPE: SLT (5 tests)
+x18 T1 = 0x00000001
+x18 T2 = 0x00000000
+x18 T3 = 0x00000001
+x18 T4 = 0x00000000
+x18 T5 = 0x00000000
+
+## STORE: SW (5 tests) — memory words
+[0x00001200] = 0x89ABCDEF
+[0x00001204] = 0x00000000
+[0x00001208] = 0xFFFFFFFF
+[0x0000120C] = 0x12345678
+[0x00001210] = 0x7FFFFFFF
+
+## LOAD: LW (5 tests) — x6 and copy to x7
+T1: x6 = 0x89ABCDEF, x7 = 0x89ABCDEF
+T2: x6 = 0x00000000, x7 = 0x00000000
+T3: x6 = 0xFFFFFFFF, x7 = 0xFFFFFFFF
+T4: x6 = 0x12345678, x7 = 0x12345678
+T5: x6 = 0x7FFFFFFF, x7 = 0x7FFFFFFF
+
+## STORE: SB (5 tests) — bytes at x22 region
+[0x00001240] = 0xF0
+[0x00001241] = 0xF0
+[0x00001242] = 0xF0
+[0x00001243] = 0xF0
+[0x00001247] = 0xF0
+
+## LOAD: LB (5 tests) — sign-extend 0xF0 -> 0xFFFFFFF0
+LB @ 0x00001240: x9 = 0xFFFFFFF0, x10 = 0xFFFFFFF0
+LB @ 0x00001241: x9 = 0xFFFFFFF0, x10 = 0xFFFFFFF0
+LB @ 0x00001242: x9 = 0xFFFFFFF0, x10 = 0xFFFFFFF0
+LB @ 0x00001243: x9 = 0xFFFFFFF0, x10 = 0xFFFFFFF0
+LB @ 0x00001247: x9 = 0xFFFFFFF0, x10 = 0xFFFFFFF0
+
+## BRANCH outcomes summary
+BEQ: T1 taken; T2 not-taken; T3 taken; T4 taken; T5 not-taken
+BNE: T1 taken; T2 not-taken; T3 taken; T4 not-taken; T5 not-taken
+BLT: T1 taken; T2 taken; T3 not-taken; T4 not-taken; T5 not-taken
+BGE: T1 not-taken; T2 taken; T3 taken; T4 not-taken; T5 taken
+
+## JUMPS summary
+JAL: 5 jumps; link regs x9/x10/x11/x12 receive PC+4 at their call sites (RELATIVE).
+JALR: 5 jumps; x14/x15/x16/x17 receive PC+4; target = (rs1+imm) & ~1 (RELATIVE).

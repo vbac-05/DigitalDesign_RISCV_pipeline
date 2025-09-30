@@ -1,0 +1,49 @@
+
+00000000 <_start>:
+    0:        10000517        auipc x10 0x10000
+    4:        00050513        addi x10 x10 0
+    8:        00a00593        addi x11 x0 10
+    c:        010000ef        jal x1 16 <bubbleSort>
+    10:        05d00893        addi x17 x0 93
+    14:        00000513        addi x10 x0 0
+    18:        00000073        ecall
+
+0000001c <bubbleSort>:
+    1c:        00200293        addi x5 x0 2
+    20:        0455cc63        blt x11 x5 88 <.Lret>
+    24:        00000393        addi x7 x0 0
+    28:        fff58f93        addi x31 x11 -1
+
+0000002c <.Louter_cond>:
+    2c:        01f3c463        blt x7 x31 8 <.Linner_init>
+    30:        0480006f        jal x0 72 <.Lret>
+
+00000034 <.Linner_init>:
+    34:        01f00333        add x6 x0 x31
+
+00000038 <.Linner_cond>:
+    38:        0063c663        blt x7 x6 12 <.Lbody>
+    3c:        00138393        addi x7 x7 1
+    40:        fedff06f        jal x0 -20 <.Louter_cond>
+
+00000044 <.Lbody>:
+    44:        00231e13        slli x28 x6 2
+    48:        ffce0e93        addi x29 x28 -4
+    4c:        01d50f33        add x30 x10 x29
+    50:        01c50eb3        add x29 x10 x28
+    54:        000f2783        lw x15 0 x30
+    58:        000ea803        lw x16 0 x29
+    5c:        00f84663        blt x16 x15 12 <.swap>
+
+00000060 <.noswap>:
+    60:        fff30313        addi x6 x6 -1
+    64:        fd5ff06f        jal x0 -44 <.Linner_cond>
+
+00000068 <.swap>:
+    68:        010f2023        sw x16 0 x30
+    6c:        00fea023        sw x15 0 x29
+    70:        fff30313        addi x6 x6 -1
+    74:        fc5ff06f        jal x0 -60 <.Linner_cond>
+
+00000078 <.Lret>:
+    78:        00008067        jalr x0 x1 0
