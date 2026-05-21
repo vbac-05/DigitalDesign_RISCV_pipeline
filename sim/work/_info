@@ -1,0 +1,239 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/code/Verilog/datapath_single_cycle
+T_opt
+!s110 1757052685
+V5G[kbfbBbFi@>V0nI<Zn`3
+Z2 04 8 4 work tb_riscv fast 0
+=1-3c557603a02d-68ba7f0c-37b-2530
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1757133765
+V^F3<1ZdTTP?<Y?<>N2<c91
+R2
+=1-b44506da112d-68bbbbc5-2b8-5fb8
+R3
+R4
+R5
+n@_opt1
+R6
+vControl_Unit
+Z7 !s110 1757133750
+!i10b 1
+!s100 XT[9;=@J?zOaF1[SBhM4i3
+IUJ6W2b`1gj86>:Y_`Aaec3
+Z8 dD:/code/Verilog/datapath_pipeline_test
+w1757132122
+8D:\code\Verilog\datapath_pipeline_test\Control_Unit.v
+FD:\code\Verilog\datapath_pipeline_test\Control_Unit.v
+!i122 61
+L0 1 125
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.1;73
+r1
+!s85 0
+31
+!s108 1757133749.000000
+!s107 D:\code\Verilog\datapath_pipeline_test\Control_Unit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:\code\Verilog\datapath_pipeline_test\Control_Unit.v|
+!i113 0
+Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+n@control_@unit
+vdatapath
+R7
+!i10b 1
+!s100 0ja9>c^V9Jdfoe1o1Ld2L2
+ISW?1f?S?V@Dz`o4?GVC@]3
+R8
+w1757133746
+8D:/code/Verilog/datapath_pipeline_test/datapath.v
+FD:/code/Verilog/datapath_pipeline_test/datapath.v
+!i122 62
+L0 18 277
+R9
+R10
+r1
+!s85 0
+31
+Z12 !s108 1757133750.000000
+!s107 D:/code/Verilog/datapath_pipeline_test/datapath.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/datapath.v|
+!i113 0
+R11
+R5
+vdmem
+R7
+!i10b 1
+!s100 oV1?:ohzG11FlWaUa[G;>2
+IO@04VUAbe>BfOKbM5^Q=L2
+R8
+w1757130003
+8D:/code/Verilog/datapath_pipeline_test/dmem.v
+FD:/code/Verilog/datapath_pipeline_test/dmem.v
+!i122 63
+L0 2 34
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:/code/Verilog/datapath_pipeline_test/dmem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/dmem.v|
+!i113 0
+R11
+R5
+vHazard
+R7
+!i10b 1
+!s100 _h:ISWVil3j5za[BzXn^b1
+I<VAkj72aKL`?]X^F^N?`o2
+R8
+w1757133117
+8D:\code\Verilog\datapath_pipeline_test\Hazard.v
+FD:\code\Verilog\datapath_pipeline_test\Hazard.v
+!i122 64
+L0 6 46
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:\code\Verilog\datapath_pipeline_test\Hazard.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:\code\Verilog\datapath_pipeline_test\Hazard.v|
+!i113 0
+R11
+R5
+n@hazard
+vimem
+R7
+!i10b 1
+!s100 7UUU`P2V;hPYPL5GcHD@F2
+I=Xoe5gie[h=0S[JVD@hdX2
+R8
+Z13 w1757070321
+8D:\code\Verilog\datapath_pipeline_test\imem.v
+FD:\code\Verilog\datapath_pipeline_test\imem.v
+!i122 65
+L0 2 25
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:\code\Verilog\datapath_pipeline_test\imem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:\code\Verilog\datapath_pipeline_test\imem.v|
+!i113 0
+R11
+R5
+vpipeline_5stages_core
+R7
+!i10b 1
+!s100 INUiXI5M1Y]4JQdBJe_aj1
+Il343>OB^LY0T6S<VTVB162
+R8
+w1757090845
+8D:/code/Verilog/datapath_pipeline_test/pipeline_5stages_core.v
+FD:/code/Verilog/datapath_pipeline_test/pipeline_5stages_core.v
+!i122 66
+L0 1 86
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:/code/Verilog/datapath_pipeline_test/pipeline_5stages_core.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/pipeline_5stages_core.v|
+!i113 0
+R11
+R5
+vRF
+R7
+!i10b 1
+!s100 R0JSBgU3SO?h4fVQc1QE`3
+IY:OEIU@iCQfEgQMk=59Kz1
+R8
+w1757133683
+8D:/code/Verilog/datapath_pipeline_test/RF.v
+FD:/code/Verilog/datapath_pipeline_test/RF.v
+!i122 67
+L0 3 33
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:/code/Verilog/datapath_pipeline_test/RF.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/RF.v|
+!i113 0
+R11
+R5
+n@r@f
+vriscv_pipeline_5stages
+R7
+!i10b 1
+!s100 koSBlYHkc=Y5TQzjK0<1_0
+Ij3S<8^435c[f[>IhLiW?Q0
+R8
+R13
+8D:/code/Verilog/datapath_pipeline_test/riscv_pipeline_5stages.v
+FD:/code/Verilog/datapath_pipeline_test/riscv_pipeline_5stages.v
+!i122 68
+L0 5 73
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:/code/Verilog/datapath_pipeline_test/riscv_pipeline_5stages.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/riscv_pipeline_5stages.v|
+!i113 0
+R11
+R5
+vtb_riscv
+R7
+!i10b 1
+!s100 _7YcR5h9`mf:^N5IfIzcZ2
+I39YkL8<BL:>h@L]_K6OMV1
+R8
+R13
+8D:/code/Verilog/datapath_pipeline_test/tb_riscv.v
+FD:/code/Verilog/datapath_pipeline_test/tb_riscv.v
+!i122 69
+L0 3 120
+R9
+R10
+r1
+!s85 0
+31
+R12
+!s107 D:/code/Verilog/datapath_pipeline_test/tb_riscv.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/code/Verilog/datapath_pipeline_test/tb_riscv.v|
+!i113 0
+R11
+R5

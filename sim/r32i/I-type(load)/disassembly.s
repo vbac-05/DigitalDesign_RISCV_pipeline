@@ -1,0 +1,27 @@
+0		10000297		auipc x5 65536
+4		00028293		addi x5 x5 0
+8		0AA00313		addi x6 x0 170
+C		00628023		sb x6 0(x5)
+10		0000C3B7		lui x7 12
+14		EEF38393		addi x7 x7 -273
+18		00729123		sh x7 2(x5)
+1C		DEADCE37		lui x28 912092
+20		EEFE0E13		addi x28 x28 -273
+24		01C2A223		sw x28 4(x5)
+28		00028403		lb x8 0(x5)
+2C		0012C483		lbu x9 1(x5)
+30		00229903		lh x18 2(x5)
+34		0022D983		lhu x19 2(x5)
+38		0042AA03		lw x20 4(x5)
+3C		07F00E93		addi x29 x0 127
+40		01D282A3		sb x29 5(x5)
+44		0052CA83		lbu x21 5(x5)
+48		0000CF37		lui x30 12
+4C		0DEF0F13		addi x30 x30 222
+50		01E29323		sh x30 6(x5)
+54		0062DB03		lhu x22 6(x5)
+58		FEEE0FB7		lui x31 1044192
+5C		ACEF8F93		addi x31 x31 -1330
+60		01F2A423		sw x31 8(x5)
+64		0082AB83		lw x23 8(x5)
+68		00000063		beq x0 x0 0       
